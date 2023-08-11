@@ -110,8 +110,10 @@ asciidoctor.doFirst {
 task copyDocument(type: Copy) {
     dependsOn asciidoctor
     from file("build/docs/asciidoc")
-    into file("src/main/resources/static/docs")
+    //into file("src/main/resources/static/docs")
+    into "docs/"
 }
+
 
 build {
     dependsOn copyDocument
@@ -139,8 +141,4 @@ tasks.withType(GenerateSwaggerUI) {
     }
 }
 
-task apipage(type: Copy) {
-    dependsOn copyDocument
-    from "build/docs/asciidoc/"
-    into "docs/"
-}
+
