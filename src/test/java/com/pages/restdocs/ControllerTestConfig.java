@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.restdocs;
+package com.pages.restdocs;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;

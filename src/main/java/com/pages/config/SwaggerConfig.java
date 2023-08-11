@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.config;
+package com.pages.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,10 +1,8 @@
-package com.example.springswaggerpages.controller.dto;
+package com.pages.controller.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
-import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

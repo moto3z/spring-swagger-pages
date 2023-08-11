@@ -1,6 +1,6 @@
-package com.example.springswaggerpages.controller;
+package com.pages.controller;
 
-import com.example.springswaggerpages.controller.dto.BoardPostRequest;
+import com.pages.controller.dto.BoardPostRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import java.util.Map;

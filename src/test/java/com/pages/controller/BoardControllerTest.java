@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.controller;
+package com.pages.controller;
 
 import static com.epages.restdocs.apispec.ResourceDocumentation.resource;
 import static org.mockito.Mockito.when;
@@ -9,8 +9,8 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWit
 
 import com.epages.restdocs.apispec.MockMvcRestDocumentationWrapper;
 import com.epages.restdocs.apispec.ResourceSnippetParameters;
-import com.example.springswaggerpages.controller.dto.BoardPostRequest;
-import com.example.springswaggerpages.restdocs.ControllerTestConfig;
+import com.pages.controller.dto.BoardPostRequest;
+import com.pages.restdocs.ControllerTestConfig;
 import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

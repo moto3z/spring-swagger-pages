@@ -1,6 +1,6 @@
-package com.example.springswaggerpages.controller;
+package com.pages.controller;
 
-import com.example.springswaggerpages.controller.dto.MemberRequest;
+import com.pages.controller.dto.MemberRequest;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

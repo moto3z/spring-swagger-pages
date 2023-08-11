@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.controller.dto;
+package com.pages.controller.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

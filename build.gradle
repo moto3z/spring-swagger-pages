@@ -124,7 +124,8 @@ tasks.withType(GenerateSwaggerUI) {
     delete file('src/main/resources/static/docs/')
     copy {
         from "build/resources/main/static/docs"
-        into "src/main/resources/static/docs/"
+        //into "src/main/resources/static/docs/"
+        into "docs/"
     }
 }
 

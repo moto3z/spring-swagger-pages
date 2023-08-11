@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.controller;
+package com.pages.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

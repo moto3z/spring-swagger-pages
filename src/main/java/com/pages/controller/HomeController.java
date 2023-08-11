@@ -1,4 +1,4 @@
-package com.example.springswaggerpages.controller;
+package com.pages.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
