@@ -1,0 +1,15 @@
+ifndef::snippets[]
+:snippets: ./build/generated-snippets
+endif::[]
+
+= API 문서
+
+== `GET /products` - 제품 목록 얻기
+
+HTTP request:
+
+include::{snippets}/board-docs/http-request.adoc[]
+
+HTTP response:
+
+include::{snippets}/board-docs/http-response.adoc[]

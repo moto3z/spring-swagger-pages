@@ -25,8 +25,14 @@ plugins {
     //swagger generator plugin
     id 'org.hidetake.swagger.generator' version '2.18.2'
 
-    id "org.asciidoctor.jvm.convert" version "3.3.2"
-//    id 'org.asciidoctor.convert' version '1.5.8'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    //id 'org.asciidoctor.convert' version '2.4'
+    /*
+    Gradle 버전에 따라서 사용해야 하는 plugin 이 다르다.
+    Gradle 7.x 이상 : org.asciidoctor.jvm.convert 를 사용하고, 3.3.2 버전을 사용
+    Gradle 6.x 이하 : org.asciidoctor.convert 를 사용하고, 2.4.0 버전을 사용
+     */
+
 
 
 }
@@ -73,14 +79,6 @@ tasks.named('test') {
 }
 
 
-tasks.withType(GenerateSwaggerUI) {
-    dependsOn 'openapi3'
-    delete file('src/main/resources/static/docs/')
-    copy {
-        from "build/resources/main/static/docs"
-        into "src/main/resources/static/docs/"
-    }
-}
 
 bootJar {
     dependsOn(':openapi3')
@@ -101,13 +99,32 @@ openapi3 {
 
 
 asciidoctor {
-    inputs.dir snippetsDir
-    // 다른 Task 에 의존한다는 것을 알리는 것이다.
-    // test Task 에 의존함을 알린다.
-    // asciidoctor task 를 실행할 때, test task 를 먼저 실행한다.
     dependsOn test
+    // asciidoctor task 를 실행할 때, test task 를 먼저 실행한다.
+    inputs.dir snippetsDir
+}
+asciidoctor.doFirst {
+    delete file('src/main/resources/static/docs')
 }
 
+task copyDocument(type: Copy) {
+    dependsOn asciidoctor
+    from file("build/docs/asciidoc")
+    into file("src/main/resources/static/docs")
+}
+
+build {
+    dependsOn copyDocument
+}
+
+tasks.withType(GenerateSwaggerUI) {
+    dependsOn 'openapi3'
+    delete file('src/main/resources/static/docs/')
+    copy {
+        from "build/resources/main/static/docs"
+        into "src/main/resources/static/docs/"
+    }
+}
 
 tasks.withType(GenerateSwaggerUI) {
     //https://thalals.tistory.com/433#google_vignette
@@ -122,3 +139,8 @@ tasks.withType(GenerateSwaggerUI) {
     }
 }
 
+task apipage(type: Copy) {
+    dependsOn copyDocument
+    from "build/docs/asciidoc/"
+    into "docs/"
+}
