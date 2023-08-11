@@ -1,0 +1,6 @@
+### sdf
+POST http://localhost:8080/board/v0
+Content-Type: application/json
+
+{
+  "title":"해리포터와 일곱난쟁이","contents":"백설마녀와 꿀이든 사과","isAnonymous":false,"isReservation":true,"ReservedAt":"Aug 11, 2023, 8:29:28 PM"}
